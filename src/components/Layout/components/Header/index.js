@@ -4,21 +4,7 @@ import Tippy from '@tippyjs/react';
 import HeadlessTippy from '@tippyjs/react/headless';
 import 'tippy.js/dist/tippy.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faArrowRightFromBracket,
-  faCircleQuestion,
-  faCircleXmark,
-  faEllipsisVertical,
-  faGear,
-  faKeyboard,
-  faLanguage,
-  faMagnifyingGlass,
-  faMessage,
-  faPaperPlane,
-  faPlus,
-  faSpinner,
-  faUser,
-} from '@fortawesome/free-solid-svg-icons';
+import { faCircleXmark, faEllipsisVertical, faPlus, faSpinner } from '@fortawesome/free-solid-svg-icons';
 
 import { Wrapper as PopperWrapper } from '~/components/Popper';
 import logo from '~/assets/images';
@@ -26,12 +12,23 @@ import styles from './Header.module.scss';
 import AccountItem from '~/components/AccountItem';
 import Button from '~/components/Button';
 import Menu from '~/components/Popper/Menu';
-import { faTiktok } from '@fortawesome/free-brands-svg-icons';
+import {
+  FeedbackIcon,
+  InboxIcon,
+  KeyboardIcon,
+  LanguageIcon,
+  LogOutIcon,
+  MessageIcon,
+  ProfileIcon,
+  SearchIcon,
+  SettingIcon,
+  TiktokCoinIcon,
+} from '~/components/Icons';
 
 const cx = classNames.bind(styles);
 const MENU_ITEMS = [
   {
-    icon: <FontAwesomeIcon icon={faLanguage} />,
+    icon: <LanguageIcon width="2rem" height="2rem" className="menu-icon" />,
     title: 'English',
     children: {
       title: 'Language',
@@ -50,12 +47,12 @@ const MENU_ITEMS = [
     },
   },
   {
-    icon: <FontAwesomeIcon icon={faCircleQuestion} />,
+    icon: <FeedbackIcon width="2rem" height="2rem" className="menu-icon" />,
     title: 'Feedback and help',
     to: '/feedback',
   },
   {
-    icon: <FontAwesomeIcon icon={faKeyboard} />,
+    icon: <KeyboardIcon width="2rem" height="2rem" className="menu-icon" />,
     title: 'Keyboard shortcuts',
   },
 ];
@@ -76,23 +73,23 @@ function Header() {
   const currentUser = true;
   const USER_MENU = [
     {
-      icon: <FontAwesomeIcon icon={faUser} />,
+      icon: <ProfileIcon width="2rem" height="2rem" className="menu-icon" />,
       title: 'View profile',
       to: '/@huy3kk',
     },
     {
-      icon: <FontAwesomeIcon icon={faTiktok} />,
+      icon: <TiktokCoinIcon width="2rem" height="2rem" className="menu-icon" />,
       title: 'Get coins',
       to: '/coin',
     },
     {
-      icon: <FontAwesomeIcon icon={faGear} />,
+      icon: <SettingIcon width="2rem" height="2rem" className="menu-icon" />,
       title: 'Settings',
       to: '/settings',
     },
     ...MENU_ITEMS,
     {
-      icon: <FontAwesomeIcon icon={faArrowRightFromBracket} />,
+      icon: <LogOutIcon width="2rem" height="2rem" className="menu-icon" />,
       title: 'Log out',
       to: '/logout',
       separate: 'separate',
@@ -126,7 +123,7 @@ function Header() {
             </button>
             <FontAwesomeIcon className={cx('loading')} icon={faSpinner} />
             <button className={cx('search-btn')}>
-              <FontAwesomeIcon icon={faMagnifyingGlass} />
+              <SearchIcon width="2.4rem" height="2.4rem" className="search-icon" />
             </button>
           </div>
         </HeadlessTippy>
@@ -138,12 +135,12 @@ function Header() {
               </Button>
               <Tippy content="Message" placement="bottom">
                 <button className={cx('action-btn')}>
-                  <FontAwesomeIcon icon={faPaperPlane} />
+                  <MessageIcon width="2.6rem" height="2.6rem" />
                 </button>
               </Tippy>
               <Tippy content="Inbox" placement="bottom">
                 <button className={cx('action-btn')}>
-                  <FontAwesomeIcon icon={faMessage} />
+                  <InboxIcon />
                 </button>
               </Tippy>
             </>
