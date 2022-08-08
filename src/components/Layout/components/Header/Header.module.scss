@@ -1,0 +1,126 @@
+.wrapper {
+  --search-border-radius: 92px;
+  --search-height: 46px;
+  --search-after-height: 28px;
+  --search-btn-width: 52px;
+
+  width: 100%;
+  height: var(--default-layout-header-height);
+  box-shadow: 0px 1px 1px rgb(0 0 0 / 12%);
+  display: flex;
+  justify-content: center;
+}
+
+.content {
+  height: 100%;
+  padding: 0 var(--default-layout-horizontal-spacer);
+  width: var(--default-layout-width);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .tiktok-logo {
+    cursor: pointer;
+  }
+}
+
+.search,
+.search-result {
+  width: 361px;
+}
+
+.search {
+  position: relative;
+  height: var(--search-height);
+  display: flex;
+  padding-left: 16px;
+  background-color: rgba(22, 24, 35, 0.06);
+  border-radius: var(--search-border-radius);
+  border: 1.5px solid transparent;
+  input {
+    flex: 1;
+    height: 100%;
+    font-size: 1.6rem;
+    color: var(--black-color);
+    caret-color: var(--primary-color);
+    background-color: transparent;
+  }
+  input:not(:placeholder-shown) ~ .search-btn {
+    color: rgba(22, 24, 35, 0.75);
+  }
+  &:focus-within {
+    border: 1.5px solid rgba(22, 24, 35, 0.2);
+  }
+}
+
+.search-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  padding: 5px 12px;
+  color: rgba(22, 24, 35, 0.5);
+}
+
+.clear,
+.loading {
+  position: absolute;
+  right: calc(var(--search-btn-width) + 16px);
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(22, 24, 35, 0.34);
+}
+
+.search-btn {
+  position: relative;
+  width: var(--search-btn-width);
+  height: 100%;
+  border-top-right-radius: var(--search-border-radius);
+  border-bottom-right-radius: var(--search-border-radius);
+  font-size: 1.8rem;
+  color: rgba(22, 24, 35, 0.34);
+  &:hover {
+    background: rgba(22, 24, 35, 0.03);
+    cursor: pointer;
+  }
+  &:active {
+    background: rgba(22, 24, 35, 0.06);
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    top: calc((var(--search-height) - var(--search-after-height)) / 2);
+    left: 0;
+    width: 1px;
+    height: var(--search-after-height);
+    background-color: rgba(22, 24, 35, 0.12);
+  }
+}
+
+// Actions
+.actions {
+  display: flex;
+  align-items: center;
+  .user-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-size: cover;
+    margin-left: 16px;
+    cursor: pointer;
+  }
+}
+
+.more-btn {
+  margin-left: 28px;
+  font-size: 2rem;
+  padding: 4px 10px;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.action-btn {
+  padding: 0 16px;
+  cursor: pointer;
+  svg {
+    display: block;
+    font-size: 2rem;
+  }
+}
