@@ -3,21 +3,23 @@ import Home from '~/pages/Home';
 import Following from '~/pages/Following';
 import Profile from '~/pages/Profile';
 import Upload from '~/pages/Upload';
+import configRoutes from '~/config/routes';
+
 const publicRoutes = [
   {
-    path: '/',
+    path: configRoutes.home,
     component: Home,
   },
   {
-    path: '/following',
+    path: configRoutes.following,
     component: Following,
   },
   {
-    path: '/profile',
+    path: configRoutes.profile,
     component: Profile,
   },
   {
-    path: '/upload',
+    path: configRoutes.upload,
     component: Upload,
     layout: HeaderOnly,
   },

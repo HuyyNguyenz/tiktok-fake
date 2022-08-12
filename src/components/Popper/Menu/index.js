@@ -57,6 +57,7 @@ function Menu({ children, items = [], onChange = defaultFn }) {
       onHide={() => {
         setHistory((prev) => prev.slice(0, 1));
       }}
+      hideOnClick={false}
     >
       {children}
     </Tippy>

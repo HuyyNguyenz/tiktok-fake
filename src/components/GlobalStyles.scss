@@ -1,10 +1,15 @@
 @import 'normalize.css';
 
 :root {
+  // Colors
   --primary-color: #fe2c55;
   --black-color: #000;
   --text-color: #161823;
   --white-color: #fff;
+
+  // Fonts
+  --font-family: 'ProximaNova', sans-serif;
+
   // Default Layout
   --default-layout-header-height: 60px;
   --default-layout-width: 1150px;
@@ -15,7 +20,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'ProximaNova', sans-serif;
+  font-family: var(--font-family);
   font-size: 1.6rem;
   line-height: 1.5;
   text-rendering: optimizeSpeed;
