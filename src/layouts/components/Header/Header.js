@@ -22,7 +22,7 @@ import {
   SettingIcon,
   TiktokCoinIcon,
 } from '~/components/Icons';
-import Search from '~/components/Search';
+import Search from '~/layouts/components/Search';
 
 const cx = classNames.bind(styles);
 const MENU_ITEMS = [
@@ -124,7 +124,7 @@ function Header() {
               <Image
                 className={cx('user-avatar')}
                 alt="avatar"
-                src="https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/3076832c615a895e39ee03cd549a6eff~c5_720x720.jpeg?x-expires=1660024800&x-signature=3d%2BaA3%2FNNaiis5g3pPlnUE%2BjDek%3D"
+                src="https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/3076832c615a895e39ee03cd549a6eff~c5_720x720.jpeg?x-expires=1660798800&x-signature=5vcTfwwyOnaRsaVwwj%2F6OjlUr84%3D"
                 fallback="https://static.fullstack.edu.vn/static/media/f8-icon.18cd71cfcfa33566a22b.png"
               />
             ) : (
