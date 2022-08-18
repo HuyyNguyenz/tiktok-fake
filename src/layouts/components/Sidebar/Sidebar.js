@@ -1,8 +1,9 @@
 import classNames from 'classnames/bind';
 import styles from './Sidebar.module.scss';
 import config from '~/config';
-import Menu, { MenuItem } from './Menu';
 import { HomeIcon, HomeActiveIcon, FollowIcon, FollowActiveIcon, LiveIcon, LiveActiveIcon } from '~/components/Icons';
+import Menu, { MenuItem } from './Menu';
+import SuggestAccounts from '~/components/SuggestAccounts';
 
 const cx = classNames.bind(styles);
 function Sidebar() {
@@ -18,6 +19,8 @@ function Sidebar() {
         />
         <MenuItem to={config.routes.live} title={'LIVE'} icon={<LiveIcon />} activeIcon={<LiveActiveIcon />} />
       </Menu>
+
+      <SuggestAccounts label={'Suggested Accounts'} />
     </aside>
   );
 }
